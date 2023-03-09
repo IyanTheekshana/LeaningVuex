@@ -2,7 +2,8 @@
   <base-container title="Vuex">
     <!-- <h3>{{ $store.state.counter }}</h3> -->
     <the-counter></the-counter>
-    <button @click="addOne()">Add 20</button>
+    <!-- <button @click="addOne()">Add 20</button> -->
+    <button @click="inc({ value: 20 })">Add 20</button>
     <change-count></change-count>
     <hr />
     <favorite-value></favorite-value>
@@ -14,7 +15,7 @@ import BaseContainer from "./components/BaseContainer.vue";
 import TheCounter from "./components/TheCounter.vue";
 import ChangeCount from "./components/ChangeCounter.vue";
 import FavoriteValue from "./components/FavoriteValue.vue";
-
+import { mapActions } from "vuex";
 export default {
   components: {
     BaseContainer,
@@ -23,13 +24,17 @@ export default {
     FavoriteValue,
   },
   methods: {
-    addOne() {
-      // this.$store.commit("increase", { value: 20 });
-      this.$store.dispatch({
-        type: "increase",
-        value: 20,
-      });
-    },
+    // addOne() {
+    //   // this.$store.commit("increase", { value: 20 });
+    //   this.$store.dispatch({
+    //     type: "increase",
+    //     value: 20,
+    //   });
+    // }
+    // ...mapActions(["increase"]),
+    ...mapActions({
+      inc: "increase",
+    }),
   },
 };
 </script>
