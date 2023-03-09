@@ -25,7 +25,7 @@ export default {
   methods: {
     addOne() {
       // this.$store.commit("increase", { value: 20 });
-      this.$store.commit({
+      this.$store.dispatch({
         type: "increase",
         value: 20,
       });
@@ -57,6 +57,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   margin: 0.5rem;
+  min-width: 150px;
 }
 button:hover {
   background-color: lightskyblue;
