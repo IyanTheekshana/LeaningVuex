@@ -4,6 +4,8 @@
     <the-counter></the-counter>
     <button @click="addOne()">Add 20</button>
     <change-count></change-count>
+    <hr />
+    <favorite-value></favorite-value>
   </base-container>
 </template>
 
@@ -11,11 +13,14 @@
 import BaseContainer from "./components/BaseContainer.vue";
 import TheCounter from "./components/TheCounter.vue";
 import ChangeCount from "./components/ChangeCounter.vue";
+import FavoriteValue from "./components/FavoriteValue.vue";
+
 export default {
   components: {
     BaseContainer,
     TheCounter,
     ChangeCount,
+    FavoriteValue,
   },
   methods: {
     addOne() {
@@ -56,5 +61,9 @@ button {
 button:hover {
   background-color: lightskyblue;
   color: blue;
+}
+hr {
+  border: 1px solid black;
+  width: 100%;
 }
 </style>
